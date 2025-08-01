@@ -1,0 +1,85 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { MapPin, Bus, Package, Phone, Calendar, Moon, Sun } from "lucide-react";
+
+export default function TrisaktiTransport() {
+  return (
+    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen">
+      {/* Header */}
+      <header className="flex items-center justify-between p-4 shadow-md sticky top-0 bg-white dark:bg-gray-900 z-50">
+        <h1 className="text-2xl font-bold">Trisakti Transport</h1>
+        <nav className="space-x-4">
+          <Button variant="ghost">Home</Button>
+          <Button variant="ghost">Services</Button>
+          <Button variant="ghost">Schedule</Button>
+          <Button variant="ghost">Book</Button>
+          <Button variant="ghost">Track</Button>
+          <Button variant="ghost">Support</Button>
+        </nav>
+        <Button variant="ghost" size="icon" aria-label="Toggle Theme">
+          <Moon className="h-5 w-5 dark:hidden" />
+          <Sun className="h-5 w-5 hidden dark:inline" />
+        </Button>
+      </header>
+
+      {/* Hero */}
+      <section className="relative h-[60vh] bg-[url('/shuttle.jpg')] bg-cover bg-center flex items-center justify-center">
+        <div className="bg-black bg-opacity-50 p-8 rounded-xl text-center">
+          <h2 className="text-4xl font-bold mb-4">Reliable & Smart Transport by Trisakti</h2>
+          <div className="space-x-4">
+            <Button>Book a Ride</Button>
+            <Button variant="outline">Track Shuttle</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <Card className="hover:shadow-xl transition">
+          <CardContent className="flex flex-col items-center p-4">
+            <Bus className="w-8 h-8 mb-2" />
+            <h3 className="font-semibold text-lg">Shuttle Service</h3>
+            <p className="text-sm text-center">Daily student & staff transport across Jakarta.</p>
+          </CardContent>
+        </Card>
+        <Card className="hover:shadow-xl transition">
+          <CardContent className="flex flex-col items-center p-4">
+            <Package className="w-8 h-8 mb-2" />
+            <h3 className="font-semibold text-lg">Cargo Delivery</h3>
+            <p className="text-sm text-center">Secure item transport between campuses.</p>
+          </CardContent>
+        </Card>
+        <Card className="hover:shadow-xl transition">
+          <CardContent className="flex flex-col items-center p-4">
+            <MapPin className="w-8 h-8 mb-2" />
+            <h3 className="font-semibold text-lg">Track Vehicle</h3>
+            <p className="text-sm text-center">Live shuttle tracking via GPS.</p>
+          </CardContent>
+        </Card>
+        <Card className="hover:shadow-xl transition">
+          <CardContent className="flex flex-col items-center p-4">
+            <Calendar className="w-8 h-8 mb-2" />
+            <h3 className="font-semibold text-lg">View Schedule</h3>
+            <p className="text-sm text-center">Updated transport schedules and stops.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Support */}
+      <section className="p-8 text-center">
+        <h3 className="text-2xl font-bold mb-4">Need Help?</h3>
+        <p className="mb-4">Our support team is available via WhatsApp and phone 24/7.</p>
+        <Button className="mr-4">
+          <Phone className="w-4 h-4 mr-2" /> Call Us
+        </Button>
+        <Button variant="outline">?? Chat on WhatsApp</Button>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-100 dark:bg-gray-800 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
+        © 2025 Trisakti Transport. All rights reserved.
+      </footer>
+    </div>
+  );
+}
